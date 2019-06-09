@@ -23,6 +23,8 @@ FROM cute18/flaskbase
 LABEL maintainer="ljy_coder@163.com"
 RUN rm -rf app manager.py 
 COPY . .
+RUN pip install -r requirements.txt
+CMD ["uwsgi", "--ini","uwsgi.ini"]
 ```
 ### Docker Command
 ```
